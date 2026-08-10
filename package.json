@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && node prisma/seed.js && next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^5.14.0",
     "@vercel/blob": "^0.23.0",
+    "dotenv": "^16.4.5",
     "iconv-lite": "^0.7.3",
     "next": "14.2.3",
     "react": "^18",
