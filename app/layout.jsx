@@ -1,10 +1,10 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'デジタル安全誓約書',
+  title: 'デジタル安全宣言',
   description: '毎朝出庫前のデジタル安全誓約書アプリ',
   manifest: '/manifest.json',
-  themeColor: '#2e7d32',
+  themeColor: '#166534',
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -21,10 +21,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ja">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#166534" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="安全宣言" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body>
         {children}
