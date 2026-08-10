@@ -6,6 +6,7 @@ import styles from './complete.module.css';
 
 export default function CompletePage() {
   const [dateStr, setDateStr] = useState('');
+  const [userName, setUserName] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -16,6 +17,13 @@ export default function CompletePage() {
       return;
     }
 
+    try {
+      const parsedUser = JSON.parse(userData);
+      setUserName(parsedUser.name || 'ドライバー');
+    } catch (e) {
+      console.error('Failed to parse user data:', e);
+    }
+
     const today = new Date();
     // YY/MM/DD 形式を作成
     const yy = String(today.getFullYear()).slice(-2);
@@ -23,9 +31,6 @@ export default function CompletePage() {
     const dd = String(today.getDate()).padStart(2, '0');
     
     setDateStr(`${yy}/${mm}/${dd}`);
-
-    // 数秒後に自動でログイン画面に戻す場合は以下を入れるが、配車係の目視用に残すのが通常。
-    // そのため、「戻る」ボタンを置いておく
   }, [router]);
 
   return (
@@ -34,7 +39,12 @@ export default function CompletePage() {
         <div className={styles.checkIcon}>✓</div>
         <h1 className={styles.title}>デジタル安全誓約書</h1>
         <h2 className={styles.status}>確認済み</h2>
-        <div className={styles.date}>{dateStr}</div>
+        
+        {/* 社員氏名・日付表示領域（スクショ使い回し防止・高視認性） */}
+        <div className={styles.infoCard}>
+          <div className={styles.userName}>{userName} 様</div>
+          <div className={styles.date}>{dateStr}</div>
+        </div>
       </div>
       
       <button className={styles.backBtn} onClick={() => router.push('/driver')}>

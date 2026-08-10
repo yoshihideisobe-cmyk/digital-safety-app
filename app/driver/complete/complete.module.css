@@ -17,45 +17,74 @@
   align-items: center;
   gap: 15px;
   animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  max-width: 450px;
 }
 
 .checkIcon {
   font-size: 5rem;
   line-height: 1;
   background-color: rgba(255, 255, 255, 0.2);
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 .status {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
-  margin: 10px 0;
+  margin: 5px 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.infoCard {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-top: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.userName {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
+  padding-bottom: 10px;
+  width: 100%;
+  word-break: break-all;
 }
 
 .date {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   font-family: monospace;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
 }
 
 .backBtn {
-  margin-top: 60px;
+  margin-top: 40px;
   background-color: rgba(255, 255, 255, 0.15);
   color: white;
   border: 2px solid white;
