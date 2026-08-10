@@ -1,0 +1,7 @@
+{
+  "/driver/page": "app/driver/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/driver/complete/page": "app/driver/complete/page.js",
+  "/page": "app/page.js",
+  "/admin/employees/page": "app/admin/employees/page.js"
+}

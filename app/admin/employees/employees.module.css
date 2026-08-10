@@ -1,0 +1,291 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.header {
+  background-color: #1a237e;
+  color: white;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navBtn {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.navBtn:hover { background-color: rgba(255,255,255,0.2); }
+
+.logoutBtn {
+  background-color: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.panel {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.panel h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 16px;
+}
+.panelHeader h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.badge {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #c8e6c9;
+}
+
+/* CSV インポート */
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.importArea {
+  margin-bottom: 14px;
+}
+
+.fileLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a237e;
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.fileLabel:hover { background-color: #283593; }
+
+.fileInput {
+  display: none;
+}
+
+.importResult {
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.resultSuccess { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+.resultError   { background-color: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+
+.csvSample { margin-top: 8px; }
+.csvSample summary { cursor: pointer; font-size: 0.85rem; color: #666; }
+.pre {
+  background-color: #f5f7fa;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  overflow-x: auto;
+  border: 1px solid #e0e0e0;
+}
+
+/* 個別追加フォーム */
+.addForm {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+.inputGroup input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  min-width: 180px;
+}
+
+.inputGroupCheckbox {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+}
+.inputGroupCheckbox label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn:hover { background-color: var(--primary-dark); }
+
+/* 社員一覧テーブル */
+.tableWrapper { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+.table th {
+  background-color: #f8f9fa;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.codeCell { font-family: monospace; font-weight: 600; color: #555; }
+
+.editingRow { background-color: #fffde7; }
+
+.editInput {
+  padding: 6px 10px;
+  border: 2px solid #5c6bc0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.adminBadge {
+  background-color: #e8eaf6;
+  color: #3949ab;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #c5cae9;
+}
+
+.driverBadge {
+  background-color: #f5f5f5;
+  color: #757575;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.actionCell { white-space: nowrap; }
+
+.actionBtn {
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 6px;
+  border: 1px solid;
+  transition: all 0.15s;
+}
+.editBtn   { background-color: #e3f2fd; color: #1565c0; border-color: #90caf9; }
+.editBtn:hover { background-color: #1565c0; color: white; }
+.deleteBtn { background-color: #ffebee; color: #c62828; border-color: #ef9a9a; }
+.deleteBtn:hover { background-color: #c62828; color: white; }
+.saveBtn   { background-color: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+.saveBtn:hover { background-color: #2e7d32; color: white; }
+.cancelBtn { background-color: #f5f5f5; color: #555; border-color: #ccc; }
+.cancelBtn:hover { background-color: #eee; }
+
+.emptyRow { text-align: center !important; color: #888; padding: 30px !important; }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.1rem;
+  color: #666;
+}

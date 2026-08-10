@@ -1,0 +1,50 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Employee {
+  id           String         @id @default(auto()) @map("_id") @db.ObjectId
+  employeeCode String         @unique
+  name         String
+  isAdmin      Boolean        @default(false)
+  isDeleted    Boolean        @default(false)
+  createdAt    DateTime       @default(now())
+  pledges      PledgeRecord[]
+
+  @@map("employees")
+}
+
+model SafetyItem {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  targetDate String   // YYYY-MM-DD
+  content    String
+  isDeleted  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@map("safety_items")
+}
+
+model PledgeRecord {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  employee   Employee @relation(fields: [employeeId], references: [id])
+  employeeId String   @db.ObjectId
+  pledgeDate String   // YYYY-MM-DD
+  createdAt  DateTime @default(now())
+
+  @@map("pledge_records")
+}
+
+model NoticeImage {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  url       String
+  pathname  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("notice_images")
+}
